@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "vn0FTLbMgZ8G3poW3xAJL0TiWJDXg267vkwvS/koHkM=",
+  "Source": "BiblioServer",
+  "BasePath": "_content/BiblioServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
