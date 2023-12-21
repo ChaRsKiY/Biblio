@@ -44,7 +44,7 @@ public class UserController : ControllerBase
             UserName = user.UserName,
             Email = user.Email,
             Salt = salt,
-            Password = HashPassword(user.Password, salt),
+            HashedPassword = HashPassword(user.Password, salt),
         };
 
         _context.Users.Add(newUser);
@@ -62,7 +62,7 @@ public class UserController : ControllerBase
 
         var user = await _context.Users.SingleOrDefaultAsync(x => x.Email == loginModel.Email);
 
-        if (user == null || !VerifyPassword(loginModel.Password, user.Password))
+        if (user == null || !VerifyPassword(loginModel.Password, user.HashedPassword))
         {
             return Unauthorized("Неверные учетные данные");
         }
