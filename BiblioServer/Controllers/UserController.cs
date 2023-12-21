@@ -23,7 +23,7 @@ public class UserController : ControllerBase
     {
         return Ok(await _context.Users.ToListAsync());
     }
-
+  //1
     [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] UserRegistrationModel user)
     {
