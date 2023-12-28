@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mrbla\\OneDrive\\Desktop\\Новая папка\\BiblioServer\\BiblioServer\\BiblioServer.csproj": {}
+    "C:\\Users\\mrbla\\Source\\Repos\\Biblio1\\BiblioServer\\BiblioServer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mrbla\\OneDrive\\Desktop\\Новая папка\\BiblioServer\\BiblioServer\\BiblioServer.csproj": {
+    "C:\\Users\\mrbla\\Source\\Repos\\Biblio1\\BiblioServer\\BiblioServer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mrbla\\OneDrive\\Desktop\\Новая папка\\BiblioServer\\BiblioServer\\BiblioServer.csproj",
+        "projectUniqueName": "C:\\Users\\mrbla\\Source\\Repos\\Biblio1\\BiblioServer\\BiblioServer.csproj",
         "projectName": "BiblioServer",
-        "projectPath": "C:\\Users\\mrbla\\OneDrive\\Desktop\\Новая папка\\BiblioServer\\BiblioServer\\BiblioServer.csproj",
+        "projectPath": "C:\\Users\\mrbla\\Source\\Repos\\Biblio1\\BiblioServer\\BiblioServer.csproj",
         "packagesPath": "C:\\Users\\mrbla\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mrbla\\OneDrive\\Desktop\\Новая папка\\BiblioServer\\BiblioServer\\obj\\",
+        "outputPath": "C:\\Users\\mrbla\\Source\\Repos\\Biblio1\\BiblioServer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[1.6.0, )"
             },
+            "Microsoft.AspNetCore.Authentication": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.10, )"
@@ -63,6 +67,10 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.5.0, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[7.0.3, )"
             }
           },
           "imports": [

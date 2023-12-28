@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 public class User
 {
     [Key]
-    public string Id { get; set; }
+    public int Id { get; set; }
     //Уникальное имя пользователя.
     [Required]
     [StringLength(15, MinimumLength = 3)]
@@ -16,24 +16,24 @@ public class User
     //Электронная почта пользователя.
     [Required]
     [EmailAddress]
-    public string Email { get; set; }
+    public string? Email { get; set; }
 
     //Краткая биография или описание.
     [MaxLength(500)]
-    public string Bio { get; set; }
+    public string? Bio { get; set; }
 
     //Путь на изображение аватара пользователя.
-    public string Avatar { get; set; }
+    public string? Avatar { get; set; }
 
     //Хешированый пароль пользователя.
-    public string HashedPassword { get; set; }
+    public string? HashedPassword { get; set; }
 
     //Соль для хеширования пароля.
-    public string Salt { get; set; }
+    public string? Salt { get; set; }
 
     //Флаг, указывающий, является ли пользователь администратором.
-    public bool IsAdmin { get; set; }
+    public bool? IsAdmin { get; set; }
 
     //Коллекция любимых книг пользователя.
-    public ICollection<Book> FavoriteBooks { get; set; } = new List<Book>();
+    //public ICollection<Book> FavoriteBooks { get; set; } = new List<Book>();
 }

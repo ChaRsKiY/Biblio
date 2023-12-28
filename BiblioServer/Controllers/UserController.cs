@@ -4,6 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 using BCrypt.Net;
 using Microsoft.EntityFrameworkCore;
 using BiblioServer.Context;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace BiblioServer.Controllers;
 
@@ -67,7 +72,9 @@ public class UserController : ControllerBase
             return Unauthorized("Неверные учетные данные");
         }
 
-        return Ok("Вход успешен");
+        var token = GenerateJwtToken(user);
+
+        return Ok(new { Token = token, Message = "Вход успешен" });
     }
 
     private string HashPassword(string password, string salt)
@@ -80,4 +87,25 @@ public class UserController : ControllerBase
         return BCrypt.Net.BCrypt.Verify(EnteredPassword, PasswordHash);
     }
 
+    private string GenerateJwtToken(User user)
+    {
+        var SecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("awd5aw1d65wa1d56wa1d65w1f5wa61f51g6s51g651se65g1e651g5es156aw1dS56AD1F51561f65156F15F1561f651FW651651fW561F51156"));
+        var Credentials = new SigningCredentials(SecurityKey, SecurityAlgorithms.HmacSha256);
+
+        var claims = new List<Claim>
+        {
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.Name, user.UserName),
+        };
+
+        var token = new JwtSecurityToken(
+            issuer: "",
+            audience: "",
+            claims: claims,
+            expires: DateTime.UtcNow.AddHours(1),
+            signingCredentials: Credentials
+        );
+
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
 }
